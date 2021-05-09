@@ -1,4 +1,5 @@
 
+export FZF_DEFAULT_COMMAND='fd --hidden'
 # Some functions to help with common fzf pipes etc
 
 # fzf |> nvim
