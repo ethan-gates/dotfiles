@@ -1,21 +1,21 @@
 
 # Source location
-SRC_DIR=~/.ethan
+export DOTFILES_SRC=~/.ethan
 
 # Navigate to this file
-alias zshrc="nv $SRC_DIR/.zshrc"
-alias zshreload="source $SRC_DIR/.zshrc"
+alias zshrc="nv $DOTFILES_SRC/.zshrc"
+alias zshreload="source $DOTFILES_SRC/.zshrc"
 
 ####### Zsh things
 
-source $SRC_DIR/cli-extensions/prompt.zsh
+source $DOTFILES_SRC/cli-extensions/prompt.zsh
 setopt AUTO_CD
-HISTFILE=$SRC_DIR/.zsh_history
+HISTFILE=$DOTFILES_SRC/.zsh_history
 
 ####### External terminal things
-source $SRC_DIR/kitty/commands.zsh
-source $SRC_DIR/cli-extensions/gradle.zsh
-source $SRC_DIR/cli-extensions/fzf-extras.zsh
+source $DOTFILES_SRC/kitty/*.zsh
+source $DOTFILES_SRC/cli-extensions/gradle.zsh
+source $DOTFILES_SRC/cli-extensions/fzf-extras.zsh
 
 ####### NVim things
 alias nv='nvim'
