@@ -285,16 +285,16 @@
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "ea4b3d7082376260d12e212543c87d1299bacabe"
+        "revision": "c7a219e747327bd29cbbc33cbc2a3991ea7a19c6"
       },
       "homebrew/cask-versions": {
-        "revision": "7b0c5ea720d8977aa6f7dd892e5acba3d6bbe939"
+        "revision": "fb1d40ddf2e9029d5d7e6caca39ec9aa59fca8f9"
       },
       "homebrew/cask-fonts": {
-        "revision": "84535dd6d8ce8bedd2922c8688e608bb4c9d7b5c"
+        "revision": "035ab178ceb790bb8c872a4777adb793ecfc9bca"
       },
       "homebrew/bundle": {
-        "revision": "30944b1a1ff672300855c4fcb4a5e660de149702"
+        "revision": "c786ab13fc24f373225c399941bdb95358676e01"
       }
     },
     "cask": {
@@ -335,7 +335,7 @@
         }
       },
       "sublime-merge": {
-        "version": "2049",
+        "version": "2054",
         "options": {
           "full_name": "sublime-merge",
           "args": {
@@ -344,9 +344,18 @@
         }
       },
       "visual-studio-code-insiders": {
-        "version": "1.56.0,4e185d8986339717e593be19bc75288905ffbb51",
+        "version": "1.57.0,a19565da7dfc739fa26e36aae96113e19fe3806f",
         "options": {
           "full_name": "visual-studio-code-insiders",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "kitty": {
+        "version": "0.20.3",
+        "options": {
+          "full_name": "kitty",
           "args": {
             "appdir": "/Applications"
           }
@@ -357,12 +366,12 @@
   "system": {
     "macos": {
       "big_sur": {
-        "HOMEBREW_VERSION": "3.1.5-8-geae3558",
+        "HOMEBREW_VERSION": "3.1.5-148-g19af1ff",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "0b7b084daf3c664f14fb5ba7b902586cb773384b",
+        "Homebrew/homebrew-core": "ce13b480f4582d80d951831558618d75176b9d58",
         "CLT": "12.5.0.22.9",
         "Xcode": "12.0",
-        "macOS": "11.3"
+        "macOS": "11.3.1"
       }
     }
   }

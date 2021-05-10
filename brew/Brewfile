@@ -32,6 +32,7 @@ brew "thefuck"
 brew "tmux"
 
 # Install applications
+cask "kitty"
 cask "notion"
 cask "rectangle"
 cask "spotify"
