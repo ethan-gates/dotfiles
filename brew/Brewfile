@@ -30,6 +30,7 @@ brew "neovim", args: ['HEAD']
 brew "ripgrep"
 brew "thefuck"
 brew "tmux"
+brew "bpytop"
 
 # Install applications
 cask "kitty"

@@ -16,6 +16,7 @@ HISTFILE=$DOTFILES_SRC/.zsh_history
 source $DOTFILES_SRC/kitty/*.zsh
 source $DOTFILES_SRC/cli-extensions/gradle.zsh
 source $DOTFILES_SRC/cli-extensions/fzf-extras.zsh
+source $DOTFILES_SRC/company/*.zsh
 
 ####### NVim things
 alias nv='nvim'
@@ -105,16 +106,10 @@ alias project='open "$(find . -name *.xcodeproj)" -a Xcode'
 alias sign_identities='security find-identity -v -p codesigning'
 alias xcode='open -a Xcode'
 
-######## Make Fan Quieter 
+######## Things Ethan didn't add
 
-SymID=$(pgrep SymUIAgent)
-#renice 20 $SymID
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
-# In function to prevent password prompt on startup
-function kill_bloat() {
-  SymDaemon=$(pgrep SymDaemon)
-  sudo renice 20 $SymDaemon
-
-}
-
-
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

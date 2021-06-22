@@ -1,7 +1,7 @@
-alias kconf="nvim $DOTFILES_SRC/kitty/kitty.conf"
+alias kconf="nvim $DOTFILES_SRC/kitty/custom.conf"
 
 # Tells kitty to use the directory as the window title
-precmd () {print -Pn "\e]0;%~\a"}
+precmd () {print -Pn "\e]0;%1d\a"}
 
 # Change the theme for kitty provided kitty-themes
 function kittytheme() {
