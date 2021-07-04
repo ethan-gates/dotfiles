@@ -1,5 +1,5 @@
 
-export FZF_DEFAULT_COMMAND='fd --hidden'
+export FZF_DEFAULT_COMMAND='fd --no-ignore --hidden --exclude ".git"'
 # Some functions to help with common fzf pipes etc
 
 # fzf |> nvim

@@ -14,8 +14,7 @@ HISTFILE=$DOTFILES_SRC/.zsh_history
 
 ####### External terminal things
 source $DOTFILES_SRC/kitty/*.zsh
-source $DOTFILES_SRC/cli-extensions/gradle.zsh
-source $DOTFILES_SRC/cli-extensions/fzf-extras.zsh
+source $DOTFILES_SRC/cli-extensions/*.zsh
 source $DOTFILES_SRC/company/*.zsh
 
 ####### NVim things
@@ -48,14 +47,6 @@ alias derivedData='cd ~/Library/Developer/Xcode/DerivedData/'
 alias interop='open ~/Documents/whiteboard/When\ people\ ask\ how\ to\ do\ this/408_building_faster_in_xcode.png'
 
 ######## iOS
-alias be='time bundle exec'
-alias bef='time bundle exec fastlane'
-alias bepi='time bundle exec pod install --verbose'
-alias bepiq='bundle exec pod install'
-alias bepu='time bundle exec pod update --verbose'
-alias bi='time bundle install'
-alias bu='time bundle update'
-
 alias podcache='cd ~/Library/Caches/Cocoapods/Pods/'
 alias repocache='cd ~/.cocoapods/repos/'
 
@@ -78,14 +69,6 @@ google() {
 
 # For best results, play heavy techno like the Blade club scene
 alias hacker='find ~ | cut -d/ -f7-'
-
-# Counting lines of files
-alias count-swift='find . -name "*.swift" | xargs wc -l'
-alias count-objc='find . -name "*.[hm]" | xargs wc -l'
-alias count-em='find . -name "*.m" | xargs wc -l'
-alias count-h='find . -name "*.h:" | xargs wc -l'
-
-alias m_files='find . -path ./Pods -prune -o -name "*.m" -print'
 
 
 ######## git
