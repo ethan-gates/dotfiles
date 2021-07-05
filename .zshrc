@@ -20,6 +20,7 @@ source $DOTFILES_SRC/company/*.zsh
 ####### NVim things
 alias nv='nvim'
 alias vimrc='nv ~/.config/nvim/init.vim'
+export XDG_CONFIG_HOME=$DOTFILES_SRC
 
 #alias ps='ps -ce -o pid,user,ni,command'
 

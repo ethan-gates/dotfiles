@@ -1,0 +1,77 @@
+#!/bin/zsh
+
+# Dotfile repo location (match this to the same in .zshrc)
+export DOTFILES_SRC=~/.ethan
+
+install_or_update_homebrew () {
+  # Check for Homebrew and install if we don't have it
+  if test ! $(which brew); then
+    echo "Installing Homebrew..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  else
+    # Update Homebrew recipes
+    brew update
+  fi
+}
+
+install_brewfile () {
+  # Install all our dependencies with bundle (See Brewfile)
+  brew tap homebrew/bundle
+  echo "› brew bundle"
+  brew bundle
+}
+
+install_kitty_themes () {
+  cd kitty
+  git clone --depth 1 git@github.com:dexpota/kitty-themes.git kitty-themes
+}
+
+install_vim_plug () {
+  # Install vim-plug
+  if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
+    echo "Installing vim-plug..."
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  fi
+  ln -s ~/$DOTFILES_SRC/nvim ~/.config/nvim
+}
+
+# Set up git
+prompt_for_git_config () {
+    option=$1
+    prompt="$2"
+
+    if [[ ! `git config --global $option` ]]; then
+        read -p "$prompt: " item
+        git config --global $option "$item"
+    fi
+}
+
+
+configure_git () {
+    if [ ! -f .gitconfig ]; then
+      echo "Configuring git..."
+      prompt_for_git_config user.email "Enter your email"
+      ln -s ./.gitconfig ~/.gitconfig
+    fi
+}
+
+main () {
+  echo "Setting up your Mac..."
+  install_or_update_homebrew
+  install_brewfile
+  install_kitty_themes
+  install_vim_plug
+  configure_git
+  echo "Completed Mac set up!"
+}
+
+if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then
+    if [[ "debug" = $1 ]]; then
+        DEBUG=1
+    else
+        DEBUG=0
+    fi
+
+    main "$@"
+fi
