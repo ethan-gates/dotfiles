@@ -14,13 +14,10 @@ export XDG_CONFIG_HOME=$DOTFILES_SRC
 
 #### External scripts
 # Most functionality is loaded here
-alias loaded_zshs="find $DOTFILES_SRC/shell-scripts -name \*.zsh"
-
-for f in $DOTFILES_SRC/shell-scripts/*.zsh; do
-    source $f
+alias loaded_zshs="find $DOTFILES_SRC -name \*.zsh"
+for file in `find $DOTFILES_SRC -name \*.zsh`; do
+    source $file
 done
-
-source $DOTFILES_SRC/company/*.zsh
 
 
 #### Added by other tools (rvm etc)
