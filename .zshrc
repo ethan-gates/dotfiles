@@ -6,7 +6,7 @@ export DOTFILES_SRC=~/.ethan
 alias zshrc="nv $DOTFILES_SRC/.zshrc"
 alias zshreload="source $DOTFILES_SRC/.zshrc"
 
-#### Zsh things
+# Locates hist files here instead of polluting home dir
 HISTFILE=$DOTFILES_SRC/.zsh_history
 
 #### Maps .config to repo root (only for XDG compliant)
