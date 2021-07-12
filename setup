@@ -51,8 +51,8 @@ prompt_for_git_config () {
 configure_git () {
     if [ ! -f .gitconfig ]; then
       echo "Configuring git..."
+      ln -sf ~/$DOTFILES_SRC/.gitconfig ~/.gitconfig
       prompt_for_git_config user.email "Enter your email"
-      ln -s ./.gitconfig ~/.gitconfig
     fi
 }
 
