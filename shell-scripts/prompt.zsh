@@ -21,4 +21,3 @@ prompt_suffix() {
 }
 
 export PROMPT='`prompt_status_code` `prompt_directory` `prompt_git_branch``prompt_suffix`'
-

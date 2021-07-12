@@ -1,3 +1,6 @@
+
+# For kitty customization
+
 alias kconf="nvim $DOTFILES_SRC/kitty/custom.conf"
 
 # Tells kitty to use the directory as the window title
