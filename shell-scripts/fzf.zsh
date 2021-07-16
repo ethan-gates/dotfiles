@@ -20,4 +20,3 @@ function fzf-find() {
         unset FILE
     fi
 }
-export BAT_THEME='zenburn'
