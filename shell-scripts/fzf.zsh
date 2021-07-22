@@ -1,5 +1,10 @@
 
-export FZF_DEFAULT_COMMAND='fd --no-ignore --hidden --exclude ".git"'
+FZF_IGNORES=(
+    '-E vendor/'
+    '-E .git'
+    '-E build/'
+)
+export FZF_DEFAULT_COMMAND="fd --no-ignore --hidden $FZF_IGNORES[@]"
 # Some functions to help with common fzf pipes etc
 
 # fzf |> nvim
