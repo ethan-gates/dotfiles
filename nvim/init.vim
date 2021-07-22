@@ -28,33 +28,53 @@ Plug 'sheerun/vim-polyglot'                    " Language packs
 " All Plugins must be added before the following line
 call plug#end()
 
+"----------------------------------------------------------------
+"                          Aesthetics
+"----------------------------------------------------------------
+
 "Colors and syntax
 set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
-let ayucolor="dark"   " for dark version of theme
-let ayucolor="mirage" " for mirage version of theme
+let ayucolor="mirage" " {mirage, dark, light} 
 colorscheme ayu
 
 syntax enable
 syntax on
 
 "Windows and line numbers
-set number
+set nu rnu
 set splitbelow
 set splitright
-set nu rnu
-"hi Normal guibg=NONE ctermbg=NONE
+
+" Constrast line numbers 
 hi LineNr guifg=#a0a0a0
+"git gutter bg that matches normal bg 
+hi SignColumn guibg=#212733
+
+
+"----------------------------------------------------------------
+"                         Navigation
+"----------------------------------------------------------------
+
+"Cycle to next buffer
+nnoremap 5 :bn<CR>
+"List buffers
+nnoremap 6 :buffers<CR>
+"Cycle to next window
+nnoremap t <C-w><C-w>
 
 "Fast scroll
 nnoremap m 2<C-e>
 nnoremap , 2<C-y>
 set scrolloff=15
 
-"Faster startup
-let g:python3_host_skip_check = 1
-let g:python_host_skip_check = 1
+"Terminal escape to normal mode, but not for fzf
+au TermOpen * tnoremap <Esc> <c-\><c-n>
+au FileType fzf tunmap <Esc>
+au BufLeave * tnoremap <Esc> <c-\><c-n>
 
+"----------------------------------------------------------------
+"                     Plugins Configuration 
+"----------------------------------------------------------------
 
 "NerdTree
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -63,5 +83,14 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap ff :Files<CR>
 nnoremap ft :Rg<CR>
 
-"Find current word 
-nnoremap faw yiw/<C-r>0<CR>
+
+"----------------------------------------------------------------
+"                            Misc 
+"----------------------------------------------------------------
+
+"Faster startup
+let g:python3_host_skip_check = 1
+let g:python_host_skip_check = 1
+
+"""" File specific
+au BufRead,BufNewFile Podfile.template set filetype=ruby
