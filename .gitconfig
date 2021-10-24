@@ -1,5 +1,6 @@
 [user]
 	name = Ethan Gates
+	email = ethan@stonegate.org
 [format]
 	pretty = format:%C(yellow)%h %C(red)%an %C(cyan)%cr%C(bold red)%d%Creset%n%s%n
 [core]

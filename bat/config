@@ -22,4 +22,9 @@
 #   Example 1: use the C++ syntax for .ino files
 #   Example 2: Use ".gitignore"-style highlighting for ".ignore" files
 --map-syntax "WORKSPACE:Python"
-#--map-syntax ".ignore:Git Ignore"
+--map-syntax ".bazelrc:Python"
+--map-syntax "global_bazelrc:Python"
+--map-syntax "Podfile.lock:YAML"
+--map-syntax "Gemfile.lock:YAML"
+
+--plain

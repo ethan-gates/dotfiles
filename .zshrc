@@ -14,16 +14,18 @@ export XDG_CONFIG_HOME=$DOTFILES_SRC
 
 #### External scripts
 # Most functionality is loaded here
-alias loaded_zshs="find $DOTFILES_SRC -name \*.zsh"
 for file in `find $DOTFILES_SRC -name \*.zsh`; do
     source $file
 done
+# Open one of the loaded zsh scripts
+loaded_zshs () {
+    FILE=`fd \.zsh$ $DOTFILES_SRC --color always | fzf --reverse --ansi`
+    if [[ -n "$FILE" ]]; then
+        nv $FILE
+    fi
+}
 
 #### Added by other tools (rvm etc)
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-
-# Load RVM into a shell session *as a function*
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
