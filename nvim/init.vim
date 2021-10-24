@@ -102,7 +102,11 @@ command Indent IndentBlanklineToggle
 let g:indent_blankline_enabled = v:false
 
 "Nvim-tree
-let g:nvim_tree_auto_open = 1
+lua << EOF
+require'nvim-tree'.setup{
+	open_on_setup = true
+}
+EOF
 
 "----------------------------------------------------------------
 "                            Misc

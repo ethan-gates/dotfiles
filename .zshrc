@@ -9,9 +9,6 @@ alias zshreload="source $DOTFILES_SRC/.zshrc"
 # Locates hist files here instead of polluting home dir
 HISTFILE=$DOTFILES_SRC/.zsh_history
 
-#### Maps .config to repo root (only for XDG compliant)
-export XDG_CONFIG_HOME=$DOTFILES_SRC
-
 #### External scripts
 # Most functionality is loaded here
 for file in `find $DOTFILES_SRC -name \*.zsh`; do

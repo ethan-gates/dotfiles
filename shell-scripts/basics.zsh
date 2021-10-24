@@ -8,6 +8,8 @@ lsa() {
     CLICOLOR_FORCE=1 ls -GoATh $1 | cut -c 26- | sed -E "s/ [0-9]{4} / /g" | awk NF
 }
 
+alias env='env | sort'
+
 alias path="echo $PATH | tr ':' '\n'"
 
 alias ds='rm ./.DS_Store'

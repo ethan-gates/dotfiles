@@ -6,7 +6,7 @@ FZF_IGNORES=(
 )
 
 export FZF_DEFAULT_COMMAND="fd --no-ignore --hidden $FZF_IGNORES[@]"
-export FZF_DEFAULT_OPTIONS="--ansi"
+export FZF_DEFAULT_OPTS="--ansi --reverse"
 # Some functions to help with common fzf pipes etc
 
 # fzf |> nvim

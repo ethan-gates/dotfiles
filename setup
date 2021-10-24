@@ -21,11 +21,6 @@ install_brewfile () {
   brew bundle
 }
 
-install_kitty_themes () {
-  cd kitty
-  git clone --depth 1 git@github.com:dexpota/kitty-themes.git kitty-themes
-}
-
 install_vim_plug () {
   # Install vim-plug
   if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
@@ -60,7 +55,6 @@ main () {
   echo "Setting up your Mac..."
   install_or_update_homebrew
   install_brewfile
-  install_kitty_themes
   install_vim_plug
   configure_git
   echo "Completed Mac set up!"

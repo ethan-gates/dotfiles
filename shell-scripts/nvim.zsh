@@ -9,6 +9,6 @@ nv () {
   fi
 }
 alias vimrc='nv ~/.ethan/nvim/init.vim'
-
+alias vimlua='nv ~/.ethan/nvim/init.lua' 
 
 alias vimplugs='cd `find ~/.local/share/nvim/plugged -mindepth 1 -maxdepth 1 | fzf --reverse`; nv .; cd -'
