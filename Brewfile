@@ -3,6 +3,7 @@ cask_args appdir: "/Applications"
 
 # Taps
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 tap "homebrew/bundle"
@@ -33,12 +34,15 @@ brew "tmux"
 brew "bpytop"
 
 # Install applications
+cask "1password"
 cask "kitty"
+cask "logitech-camera-settings"
 cask "notion"
 cask "rectangle"
 cask "spotify"
 cask "sublime-merge"
 cask "visual-studio-code-insiders"
+
 
 # Install MAS applications
 #mas "Spark", id: 1176895641

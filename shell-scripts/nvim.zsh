@@ -3,9 +3,9 @@
 
 nv () {
   if [[ -e $1 ]]; then 
-    nvim $1
+    nvim $1 --startuptime /tmp/nvim-startuptime
   elif [[ -f 'session.vim' ]]; then
-    nvim -S 'session.vim'
+    nvim -S 'session.vim' --startuptime /tmp/nvim-startuptime
   fi
 }
 alias vimrc='nv ~/.ethan/nvim/init.vim'

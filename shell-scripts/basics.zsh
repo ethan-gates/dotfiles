@@ -10,7 +10,6 @@ lsa() {
 
 alias env='env | sort'
 
-alias path="echo $PATH | tr ':' '\n'"
 
 alias ds='rm ./.DS_Store'
 

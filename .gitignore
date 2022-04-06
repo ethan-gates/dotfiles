@@ -3,3 +3,4 @@ kitty/kitty-themes
 .zsh_sessions
 .git
 company/
+packer.nvim/

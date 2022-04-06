@@ -4,7 +4,7 @@
 
 # Specify desired highlighting theme (e.g. "TwoDark"). Run `bat --list-themes`
 # for a list of all available themes
---theme="zenburn"
+--theme="Solarized (light)"
 
 # Enable this to use italic text on the terminal. This is not supported on all
 # terminal emulators (like tmux, by default):
@@ -26,5 +26,6 @@
 --map-syntax "global_bazelrc:Python"
 --map-syntax "Podfile.lock:YAML"
 --map-syntax "Gemfile.lock:YAML"
+--map-syntax "Podfile.template:Ruby"
 
 --plain

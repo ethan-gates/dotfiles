@@ -24,5 +24,5 @@ function kitty_bind_custom_conf() {
 }
 
 # Tells kitty to use the directory as the window title
-precmd () {print -Pn "\e]0;%1d\a"}
+precmd () {print -Pn "\e]0;%c\a"}
 

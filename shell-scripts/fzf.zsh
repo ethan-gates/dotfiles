@@ -9,6 +9,24 @@ export FZF_DEFAULT_COMMAND="fd --no-ignore --hidden $FZF_IGNORES[@]"
 export FZF_DEFAULT_OPTS="--ansi --reverse"
 # Some functions to help with common fzf pipes etc
 
+
+# fzf |> cd repos only
+function fr() {
+    REPO=`find $REPOS $FUN_REPOS -type d -exec test -e '{}/.git' ';' -print -prune | fzf`
+    if [[ -d $REPO ]]; then
+    	cd $REPO
+    fi
+}
+
+
+# fzf |> vscode
+function fv() {
+    REPO=`find $REPOS $FUN_REPOS -type d -exec test -e '{}/.git' ';' -print -prune | fzf`
+    if [[ -d $REPO ]]; then
+        visual $REPO
+    fi
+}
+
 # fzf |> nvim
 function ff() {
     if [[ -n "$1" ]]; then
@@ -38,4 +56,18 @@ function fzf-find() {
         $1 $FILE
         unset FILE
     fi
+}
+
+
+fpkill() {
+	pid=$(ps -e | fzf | xargs | cut -d" " -f1)
+	echo "Kill process $pid?"
+	ps $pid -o comm
+	read -q "CHOICE?[y/n]:"
+	if [[ $CHOICE == "y" ]]; then
+		pkill $pid
+		echo "\nKilled $pid"
+	else
+		echo "\naborted pkill"
+	fi
 }
