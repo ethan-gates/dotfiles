@@ -30,7 +30,6 @@ brew "fzf"
 brew "neovim", args: ['HEAD']
 brew "ripgrep"
 brew "thefuck"
-brew "tmux"
 brew "bpytop"
 
 # Install applications
@@ -38,7 +37,6 @@ cask "1password"
 cask "kitty"
 cask "logitech-camera-settings"
 cask "notion"
-cask "rectangle"
 cask "spotify"
 cask "sublime-merge"
 cask "visual-studio-code-insiders"

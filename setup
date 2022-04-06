@@ -45,7 +45,6 @@ main () {
   echo "Setting up your Mac..."
   install_or_update_homebrew
   install_brewfile
-  install_vim_plug
   configure_git
   echo "Completed Mac set up!"
 }
