@@ -1,9 +1,8 @@
 
 import json
-from os import path, popen
-import shutil
+from os import path, popen, mkdir
 
-key = 'workbench.colorCustomizations'
+setttings_key = 'workbench.colorCustomizations'
 
 
 # color palette: https://coolors.co/001219-e13a74-0425ba-005f73-0a9396-e9d8a6-ee9b00-ca6702-ae2012-ffffff
@@ -22,7 +21,7 @@ colors = {
 
 
 # considering how to choose font color intelligently
-for key in colors:
+def white_text(key):
     color = colors[key]
     #print(color + ' ' + key)
     n = 2
@@ -49,16 +48,18 @@ selected = select_color()
 vscode_dir = '.vscode'
 settings_path = vscode_dir + '/settings.json'
 
-# settings.json already exists
+if not path.isdir(vscode_dir):
+    mkdir(vscode_dir)
+
 if not path.isfile(settings_path):
     with open(settings_path, 'w') as f:
-        f.write('')
+        f.write('{}')
         f.close()
 
 
 settings = json.load(open(settings_path))
-settings[key] = {
+settings[setttings_key] = {
     "statusBar.background" : f"#{colors[selected]}"
 }
 with open(settings_path, "w") as f:
-    json.dump(settings, f)
+    json.dump(settings, f, indent=2)
