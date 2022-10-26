@@ -16,6 +16,7 @@ alias merge='open -a Sublime\ Merge '
 
 ##### VSCode
 alias visual='open -a Visual\ Studio\ Code\ -\ Insiders'
+alias vsstatusbar='python3 $DOTFILES_SRC/shell-scripts/statusbar.py'
 
 ##### Xcode
 alias workspace='open "$(find . -name *.xcworkspace)" -a Xcode'
