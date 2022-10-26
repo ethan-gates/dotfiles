@@ -13,3 +13,6 @@ alias bt='bazel test'
 
 # xcode things
 alias derived_data='cd ~/Library/Developer/Xcode/DerivedData'
+
+# swift compiler building
+export SCCACHE_CACHE_SIZE="50G"
