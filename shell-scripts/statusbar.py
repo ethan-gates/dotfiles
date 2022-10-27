@@ -7,7 +7,6 @@ setttings_key = 'workbench.colorCustomizations'
 
 # color palette: https://coolors.co/001219-e13a74-0425ba-005f73-0a9396-e9d8a6-ee9b00-ca6702-ae2012-ffffff
 colors = {
-    'Black': '001219',
     'Razzmatazz': 'e13a74',
     'Blue Pantone': '0425ba',
     'Blue Sapphire': '005f73',
@@ -17,6 +16,7 @@ colors = {
     'Alloy Orange': 'ca6702',
     'Rufous': 'ae2012',
     'White': 'ffffff',
+    'Black': '001219',
 }
 
 

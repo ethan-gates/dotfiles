@@ -5,9 +5,8 @@ export PATH="$PATH:."
 # Print path with newlines so easier to read
 alias path="echo $PATH | tr ':' '\n'"
 
-# Add rust tools to path if installed via rustup/cargo
-if [[ -d ~/.cargo/bin ]]; then
-    export PATH=$PATH:~/.cargo/bin
-fi
-
-
+function choose() {
+    PROGRAM_PATH=`which -a $1 | fzf`
+    alias $1=$PROGRAM_PATH
+    echo "Running \e[32m'alias $1=$PROGRAM_PATH'\e[0m"
+}
