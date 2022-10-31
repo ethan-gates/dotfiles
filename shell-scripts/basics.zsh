@@ -15,3 +15,4 @@ alias ds='rm ./.DS_Store'
 
 alias size='du -hcs * | sort -hr'
 alias size_hidden='du -hcs .[^.]* * | sort -hr'
+export BAT_CONFIG_PATH="$DOTFILES_SRC/bat/config"
